@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Dobrolet" resourceRoot="" soapui-version="4.6.4" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:testSuite name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" id="4dacd44d-e936-4b66-8b95-21f335d4a66a"><con:settings/><con:testStep type="groovy" name="Dobrolet"><con:settings/><con:config><script>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.hamcrest.CoreMatchers.*;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.util.*;
+import java.text.*;
+
+import org.apache.commons.lang.RandomStringUtils;
+import groovy.json.JsonBuilder;
+import groovy.json.JsonSlurper;
+import groovy.json.JsonOutput;
+import java.security.MessageDigest;
+
+//--------------------------------------------------
+ WebDriver driver = new FirefoxDriver();
+ driver.get("http://testbooking.dobrolet.com/");
+
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_ADT"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_CHD"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_INFANT"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListMarketMonth1"))).selectByVisibleText("Июнь 2014");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListMarketMonth2"))).selectByVisibleText("Июль 2014");
+driver.findElement(By.id("AvailabilitySearchInputSearchView_ButtonSubmit")).click();
+Thread.sleep(3000);
+driver.findElement(By.id("ControlGroupScheduleSelectView_ButtonSubmit")).click();
+Thread.sleep(3000);
+
+//пассажир раз
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_0"))).selectByVisibleText("Женский");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_0"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0")).sendKeys("Natalia");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0")).sendKeys("Bianko");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_0"))).selectByVisibleText("18");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_0"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_0"))).selectByVisibleText("1992");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_0"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0")).sendKeys("11 11 1111111");
+
+//пассажир два
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_1"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_1"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1")).sendKeys("Stanislav");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1")).sendKeys("Kraynov");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_1"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1")).sendKeys("22 22 22222222");
+
+//пассажир три
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_1"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_1"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_1"))).selectByVisibleText("1989");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_2"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_2"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_2")).sendKeys("Vlad");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_2")).sendKeys("Drakula");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_2"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_2"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_2"))).selectByVisibleText("2010");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_2"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_2")).sendKeys("33 33 3333333");
+
+
+//пассажир четыре
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_0_0"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_0_0"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0_0")).sendKeys("Nokolas");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0_0")).sendKeys("Moriarty");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_0_0"))).selectByVisibleText("Паспорт РФ");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_0_0"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_0_0"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_0_0"))).selectByVisibleText("2014");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0_0")).sendKeys("44 44 4444444");
+
+//пассажир пять
+
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListAssign_1_1"))).selectByVisibleText("Взрослый 2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_1_1"))).selectByVisibleText("Женский");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_1_1"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1_1")).sendKeys("Nyash");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1_1")).sendKeys("Myash");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_1_1"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_1_1"))).selectByVisibleText("фев");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_1_1"))).selectByVisibleText("2014");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_1_1"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1_1")).sendKeys("55 55 55555555");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_ButtonSubmit")).click();
+Thread.sleep(3000);
+
+driver.findElement(By.cssSelector("#passengerMainBody > p.floatRightPTR > #ControlGroupLuggageView_ButtonSubmit")).click();
+Thread.sleep(3000);
+driver.findElement(By.linkText("Продолжить")).click();
+Thread.sleep(3000);
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxHomePhone")).clear();
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxHomePhone")).sendKeys("+700000000");
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxEmailAddress")).clear();
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxEmailAddress")).sendKeys("000@test.com");
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ButtonSubmit")).click();
+
+Thread.sleep(5000);
+log.info driver.findElement(By.id("box_code")).getText();
+
+
+driver.findElement(By.id("pan1")).clear();
+driver.findElement(By.id("pan1")).sendKeys("4111");
+driver.findElement(By.id("pan2")).clear();
+driver.findElement(By.id("pan2")).sendKeys("1111");
+driver.findElement(By.id("pan3")).clear();
+driver.findElement(By.id("pan3")).sendKeys("1111");
+driver.findElement(By.id("pan4")).clear();
+driver.findElement(By.id("pan4")).sendKeys("1111");
+
+new Select(driver.findElement(By.id("month"))).selectByVisibleText("12");
+new Select(driver.findElement(By.id("year"))).selectByVisibleText("2015");
+
+driver.findElement(By.id("cardholderName")).clear();
+driver.findElement(By.id("cardholderName")).sendKeys("a moriarty");
+driver.findElement(By.id("iCVC")).clear();
+driver.findElement(By.id("iCVC")).sendKeys("123");
+driver.findElement(By.id("buttonPayment")).click();
+
+Thread.sleep(5000);
+
+//-------------------------------------------------
+
+
+//driver.findElement(By.id("acsUrlText")).clear();
+//driver.findElement(By.id("acsUrlText")).sendKeys(acsUrlText);
+//driver.findElement(By.id("termUrlText")).clear();
+//driver.findElement(By.id("termUrlText")).sendKeys(termUrl);
+//driver.findElement(By.id("mdText")).clear();
+//driver.findElement(By.id("mdText")).sendKeys(mdOrder);
+//driver.findElement(By.id("paReqText")).clear();
+//driver.findElement(By.id("paReqText")).sendKeys(paReq);
+//
+//driver.findElement(By.id("redirectToAcs")).click();
+//Thread.sleep(1000);
+
+WebElement pass = driver.findElement(By.id("password"));
+pass.sendKeys("12345678");
+driver.findElement(By.id("submit_id")).click();
+Thread.sleep(5000);
+// Properties.setPropertyValue( "PaReq",null );
+
+driver.quit();
+
+
+
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="Dobrolet w/o payment"><con:settings/><con:config><script>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.hamcrest.CoreMatchers.*;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.util.*;
+import java.text.*;
+
+import org.apache.commons.lang.RandomStringUtils;
+import groovy.json.JsonBuilder;
+import groovy.json.JsonSlurper;
+import groovy.json.JsonOutput;
+import java.security.MessageDigest;
+
+//--------------------------------------------------
+ WebDriver driver = new FirefoxDriver();
+ driver.get("http://testbooking.dobrolet.com/");
+
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_ADT"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_CHD"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_INFANT"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListMarketMonth1"))).selectByVisibleText("Июнь 2014");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListMarketMonth2"))).selectByVisibleText("Июль 2014");
+driver.findElement(By.id("AvailabilitySearchInputSearchView_ButtonSubmit")).click();
+Thread.sleep(3000);
+driver.findElement(By.id("ControlGroupScheduleSelectView_ButtonSubmit")).click();
+Thread.sleep(3000);
+
+//пассажир раз
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_0"))).selectByVisibleText("Женский");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_0"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0")).sendKeys("Natalia");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0")).sendKeys("Bianko");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_0"))).selectByVisibleText("18");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_0"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_0"))).selectByVisibleText("1992");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_0"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0")).sendKeys("11 11 1111111");
+
+//пассажир два
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_1"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_1"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1")).sendKeys("Stanislav");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1")).sendKeys("Kraynov");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_1"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1")).sendKeys("22 22 22222222");
+
+//пассажир три
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_1"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_1"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_1"))).selectByVisibleText("1989");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_2"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_2"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_2")).sendKeys("Vlad");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_2")).sendKeys("Drakula");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_2"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_2"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_2"))).selectByVisibleText("2010");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_2"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_2")).sendKeys("33 33 3333333");
+
+
+//пассажир четыре
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_0_0"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_0_0"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0_0")).sendKeys("Nokolas");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0_0")).sendKeys("Moriarty");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_0_0"))).selectByVisibleText("Паспорт РФ");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_0_0"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_0_0"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_0_0"))).selectByVisibleText("2014");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0_0")).sendKeys("44 44 4444444");
+
+//пассажир пять
+
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListAssign_1_1"))).selectByVisibleText("Взрослый 2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_1_1"))).selectByVisibleText("Женский");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_1_1"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1_1")).sendKeys("Nyash");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1_1")).sendKeys("Myash");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_1_1"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_1_1"))).selectByVisibleText("фев");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_1_1"))).selectByVisibleText("2014");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_1_1"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1_1")).sendKeys("55 55 55555555");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_ButtonSubmit")).click();
+Thread.sleep(3000);
+
+driver.findElement(By.cssSelector("#passengerMainBody > p.floatRightPTR > #ControlGroupLuggageView_ButtonSubmit")).click();
+Thread.sleep(3000);
+driver.findElement(By.linkText("Продолжить")).click();
+Thread.sleep(3000);
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxHomePhone")).clear();
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxHomePhone")).sendKeys("+700000000");
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxEmailAddress")).clear();
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxEmailAddress")).sendKeys("000@test.com");
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ButtonSubmit")).click();
+
+Thread.sleep(5000);
+log.info driver.findElement(By.id("box_code")).getText();
+/*
+
+driver.findElement(By.id("pan1")).clear();
+driver.findElement(By.id("pan1")).sendKeys("4111");
+driver.findElement(By.id("pan2")).clear();
+driver.findElement(By.id("pan2")).sendKeys("1111");
+driver.findElement(By.id("pan3")).clear();
+driver.findElement(By.id("pan3")).sendKeys("1111");
+driver.findElement(By.id("pan4")).clear();
+driver.findElement(By.id("pan4")).sendKeys("1111");
+
+new Select(driver.findElement(By.id("month"))).selectByVisibleText("12");
+new Select(driver.findElement(By.id("year"))).selectByVisibleText("2015");
+
+driver.findElement(By.id("cardholderName")).clear();
+driver.findElement(By.id("cardholderName")).sendKeys("a moriarty");
+driver.findElement(By.id("iCVC")).clear();
+driver.findElement(By.id("iCVC")).sendKeys("123");
+driver.findElement(By.id("buttonPayment")).click();
+
+Thread.sleep(5000);
+
+//-------------------------------------------------
+
+
+//driver.findElement(By.id("acsUrlText")).clear();
+//driver.findElement(By.id("acsUrlText")).sendKeys(acsUrlText);
+//driver.findElement(By.id("termUrlText")).clear();
+//driver.findElement(By.id("termUrlText")).sendKeys(termUrl);
+//driver.findElement(By.id("mdText")).clear();
+//driver.findElement(By.id("mdText")).sendKeys(mdOrder);
+//driver.findElement(By.id("paReqText")).clear();
+//driver.findElement(By.id("paReqText")).sendKeys(paReq);
+//
+//driver.findElement(By.id("redirectToAcs")).click();
+//Thread.sleep(1000);
+//
+WebElement pass = driver.findElement(By.id("password"));
+pass.sendKeys("12345678");
+driver.findElement(By.id("submit_id")).click();
+Thread.sleep(5000);
+// Properties.setPropertyValue( "PaReq",null );
+*/
+//driver.quit();
+
+
+
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="Dobrolet SSL Card"><con:settings/><con:config><script>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.hamcrest.CoreMatchers.*;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.util.*;
+import java.text.*;
+
+import org.apache.commons.lang.RandomStringUtils;
+import groovy.json.JsonBuilder;
+import groovy.json.JsonSlurper;
+import groovy.json.JsonOutput;
+import java.security.MessageDigest;
+
+//--------------------------------------------------
+ WebDriver driver = new FirefoxDriver();
+ driver.get("http://testbooking.dobrolet.com/");
+
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_ADT"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_CHD"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListPassengerType_INFANT"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListMarketMonth1"))).selectByVisibleText("Июнь 2014");
+new Select(driver.findElement(By.id("AvailabilitySearchInputSearchView_DropDownListMarketMonth2"))).selectByVisibleText("Июль 2014");
+driver.findElement(By.id("AvailabilitySearchInputSearchView_ButtonSubmit")).click();
+Thread.sleep(3000);
+driver.findElement(By.id("ControlGroupScheduleSelectView_ButtonSubmit")).click();
+Thread.sleep(3000);
+
+//пассажир раз
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_0"))).selectByVisibleText("Женский");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_0"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0")).sendKeys("Natalia");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0")).sendKeys("Bianko");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_0"))).selectByVisibleText("18");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_0"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_0"))).selectByVisibleText("1992");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_0"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0")).sendKeys("11 11 1111111");
+
+//пассажир два
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_1"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_1"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1")).sendKeys("Stanislav");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1")).sendKeys("Kraynov");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_1"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1")).sendKeys("22 22 22222222");
+
+//пассажир три
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_1"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_1"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_1"))).selectByVisibleText("1989");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_2"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_2"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_2")).sendKeys("Vlad");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_2")).sendKeys("Drakula");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_2"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_2"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_2"))).selectByVisibleText("2010");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_2"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_2")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_2")).sendKeys("33 33 3333333");
+
+
+//пассажир четыре
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_0_0"))).selectByVisibleText("Мужской");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_0_0"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_0_0")).sendKeys("Nokolas");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_0_0")).sendKeys("Moriarty");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_0_0"))).selectByVisibleText("Паспорт РФ");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_0_0"))).selectByVisibleText("1");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_0_0"))).selectByVisibleText("янв");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_0_0"))).selectByVisibleText("2014");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0_0")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_0_0")).sendKeys("44 44 4444444");
+
+//пассажир пять
+
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListAssign_1_1"))).selectByVisibleText("Взрослый 2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListGender_1_1"))).selectByVisibleText("Женский");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListResidentCountry_1_1"))).selectByVisibleText("Россия");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxFirstName_1_1")).sendKeys("Nyash");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxLastName_1_1")).sendKeys("Myash");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateDay_1_1"))).selectByVisibleText("2");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateMonth_1_1"))).selectByVisibleText("фев");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListBirthDateYear_1_1"))).selectByVisibleText("2014");
+new Select(driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_DropDownListDocumentType0_1_1"))).selectByVisibleText("Паспорт РФ");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1_1")).clear();
+driver.findElement(By.id("CONTROLGROUPPASSENGER_PassengerInputViewPassengerView_TextBoxDocumentNumber0_1_1")).sendKeys("55 55 55555555");
+driver.findElement(By.id("CONTROLGROUPPASSENGER_ButtonSubmit")).click();
+Thread.sleep(3000);
+
+driver.findElement(By.cssSelector("#passengerMainBody > p.floatRightPTR > #ControlGroupLuggageView_ButtonSubmit")).click();
+Thread.sleep(3000);
+driver.findElement(By.linkText("Продолжить")).click();
+Thread.sleep(3000);
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxHomePhone")).clear();
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxHomePhone")).sendKeys("+700000000");
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxEmailAddress")).clear();
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ContactInputPaymentView_TextBoxEmailAddress")).sendKeys("000@test.com");
+driver.findElement(By.id("CONTROLGROUPPAYMENTBOTTOM_ButtonSubmit")).click();
+
+Thread.sleep(5000);
+log.info driver.findElement(By.id("box_code")).getText();
+
+
+driver.findElement(By.id("pan1")).clear();
+driver.findElement(By.id("pan1")).sendKeys("5555");
+driver.findElement(By.id("pan2")).clear();
+driver.findElement(By.id("pan2")).sendKeys("5555");
+driver.findElement(By.id("pan3")).clear();
+driver.findElement(By.id("pan3")).sendKeys("5555");
+driver.findElement(By.id("pan4")).clear();
+driver.findElement(By.id("pan4")).sendKeys("5599");
+
+new Select(driver.findElement(By.id("month"))).selectByVisibleText("12");
+new Select(driver.findElement(By.id("year"))).selectByVisibleText("2015");
+
+driver.findElement(By.id("cardholderName")).clear();
+driver.findElement(By.id("cardholderName")).sendKeys("a moriarty");
+driver.findElement(By.id("iCVC")).clear();
+driver.findElement(By.id("iCVC")).sendKeys("123");
+driver.findElement(By.id("buttonPayment")).click();
+
+Thread.sleep(5000);
+
+//-------------------------------------------------
+
+
+//driver.findElement(By.id("acsUrlText")).clear();
+//driver.findElement(By.id("acsUrlText")).sendKeys(acsUrlText);
+//driver.findElement(By.id("termUrlText")).clear();
+//driver.findElement(By.id("termUrlText")).sendKeys(termUrl);
+//driver.findElement(By.id("mdText")).clear();
+//driver.findElement(By.id("mdText")).sendKeys(mdOrder);
+//driver.findElement(By.id("paReqText")).clear();
+//driver.findElement(By.id("paReqText")).sendKeys(paReq);
+//
+//driver.findElement(By.id("redirectToAcs")).click();
+//Thread.sleep(1000);
+//
+//WebElement pass = driver.findElement(By.id("password"));
+//pass.sendKeys("12345678");
+//driver.findElement(By.id("submit_id")).click();
+//Thread.sleep(5000);
+// Properties.setPropertyValue( "PaReq",null );
+
+driver.quit();
+
+
+
+
+</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>

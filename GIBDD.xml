@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="GIBDD" resourceRoot="" soapui-version="4.6.4" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:testSuite name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" id="0dfac7d7-096e-45dd-8e95-4840801e5765"><con:settings/><con:testStep type="groovy" name="Groovy Script"><con:settings/><con:config><script>
+
+//   https://test.paymentgate.ru/testmerchant/gibdd/gibdd_index.jsp
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.hamcrest.CoreMatchers.*;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.util.*;
+import java.text.*;
+
+import org.apache.commons.lang.RandomStringUtils;
+import groovy.json.JsonBuilder;
+import groovy.json.JsonSlurper;
+import groovy.json.JsonOutput;
+import java.security.MessageDigest;
+
+//--------------------------------------------------
+ WebDriver driver = new FirefoxDriver();
+ driver.get("https://test.paymentgate.ru/testmerchant/gibdd/gibdd_index.jsp/");
+
+Thread.sleep(4000);
+driver.findElement(By.name("postsum")).clear();
+driver.findElement(By.name("postsum")).sendKeys("666");
+
+
+driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("pan1")).clear();
+driver.findElement(By.id("pan1")).sendKeys("5555");
+driver.findElement(By.id("pan2")).clear();
+driver.findElement(By.id("pan2")).sendKeys("5555");
+driver.findElement(By.id("pan3")).clear();
+driver.findElement(By.id("pan3")).sendKeys("5555");
+driver.findElement(By.id("pan4")).clear();
+driver.findElement(By.id("pan4")).sendKeys("5599");
+/*
+driver.findElement(By.xpath("//button[@type='button']")).click();
+driver.findElement(By.id("ui-multiselect-month-option-11")).click();
+//driver.findElement(By.cssSelector("label.ui-corner-all.ui-state-hover > span")).click();
+//driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
+driver.findElement(By.id("ui-multiselect-year-option-1")).click();
+//driver.findElement(By.xpath("//div[3]/ul/li[2]/label/span")).click();
+driver.findElement(By.id("cardholderName")).clear();
+driver.findElement(By.id("cardholderName")).sendKeys("a moriarty");
+driver.findElement(By.id("iCVC")).clear();
+driver.findElement(By.id("iCVC")).sendKeys("123");
+driver.findElement(By.id("agree")).click();
+
+/*
+driver.findElement(By.id("buttonPayment")).click();
+
+/*
+WebElement pass = driver.findElement(By.id("password"));
+pass.sendKeys("12345678");
+driver.findElement(By.id("submit_id")).click();
+Thread.sleep(5000);
+// Properties.setPropertyValue( "PaReq",null );
+*/
+//driver.quit();
+
+
+
+
+</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>

@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="WS_SOAP" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="MerchantServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://soap.merchant.api.web.phoenix.bpc.ru/}MerchantServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://3dsec.sberbank.ru/payment/webservices/merchant-ws?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://3dsec.sberbank.ru/payment/webservices/merchant-ws?wsdl"><con:part><con:url>https://3dsec.sberbank.ru/payment/webservices/merchant-ws?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MerchantServiceImplService" targetNamespace="http://soap.merchant.api.web.phoenix.bpc.ru/" xmlns:ns1="http://engine.paymentgate.ru/webservices/merchant" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap.merchant.api.web.phoenix.bpc.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="https://3dsec.sberbank.ru/payment/webservices/merchant-ws?wsdl=MerchantService.wsdl" namespace="http://engine.paymentgate.ru/webservices/merchant"></wsdl:import>
+  <wsdl:binding name="MerchantServiceImplServiceSoapBinding" type="ns1:MerchantService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getLastOrders">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getLastOrders">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLastOrdersResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyEnrollment">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="verifyEnrollment">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verifyEnrollmentResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentOrderBinding">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="paymentOrderBinding">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="paymentOrderBindingResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bindCard">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="bindCard">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bindCardResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverseOrder">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="reverseOrder">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reverseOrderResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentOrderOtherWay">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="paymentOrderOtherWay">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="paymentOrderOtherWayResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkAuthenticate">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="checkAuthenticate">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkAuthenticateResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extendBinding">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="extendBinding">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="extendBindingResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentOrder">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="paymentOrder">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="paymentOrderResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addParams">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="addParams">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addParamsResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderStatus">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getOrderStatus">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrderStatusResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unBindCard">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="unBindCard">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="unBindCardResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="depositOrder">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="depositOrder">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="depositOrderResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOrderPreAuth">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="registerOrderPreAuth">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registerOrderPreAuthResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderStatusExtended">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getOrderStatusExtended">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrderStatusExtendedResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBindings">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getBindings">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBindingsResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="refundOrder">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="refundOrder">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="refundOrderResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOrder">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="registerOrder">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registerOrderResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finishThreeDs">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="finishThreeDs">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="finishThreeDsResponse">
+        <soap:body namespace="http://engine.paymentgate.ru/webservices/merchant" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MerchantServiceImplService">
+    <wsdl:port binding="tns:MerchantServiceImplServiceSoapBinding" name="MerchantServiceImplPort">
+      <soap:address location="https://3dsec.sberbank.ru/payment/webservices/merchant-ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://3dsec.sberbank.ru/payment/webservices/merchant-ws?wsdl=MerchantService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MerchantService" targetNamespace="http://engine.paymentgate.ru/webservices/merchant" xmlns:ns1="http://engine.paymentgate.ru/webservices/merchant" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://engine.paymentgate.ru/webservices/merchant" version="1.0" xmlns:tns="http://engine.paymentgate.ru/webservices/merchant" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="orderInfo">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+        </xs:sequence>
+        <xs:attribute name="ordernumber" type="xs:string"/>
+        <xs:attribute name="amount" type="xs:long" use="required"/>
+        <xs:attribute name="approvedAmount" type="xs:long" use="required"/>
+        <xs:attribute name="depositedAmount" type="xs:long" use="required"/>
+        <xs:attribute name="currencyCode" type="xs:short" use="required"/>
+        <xs:attribute name="state" type="tns:transactionState"/>
+        <xs:attribute name="fraudLevel" type="xs:int" use="required"/>
+        <xs:attribute name="cardholder" type="xs:string"/>
+        <xs:attribute name="panMasked" type="xs:string"/>
+        <xs:attribute name="ip" type="xs:string"/>
+        <xs:attribute name="actionCode" type="xs:string"/>
+        <xs:attribute name="date" type="xs:dateTime"/>
+        <xs:attribute name="bankName" type="xs:string"/>
+        <xs:attribute name="approvalCode" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="serviceParam">
+        <xs:sequence/>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:complexType abstract="true" name="abstractCollection">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType abstract="true" name="abstractList">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractCollection">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="arrayList">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractList">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="orderAddendumList">
+        <xs:complexContent>
+          <xs:extension base="tns:arrayList">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="verifyEnrollmentResponse">
+        <xs:sequence/>
+        <xs:attribute name="isEnrolled" type="xs:string"/>
+        <xs:attribute name="emitterName" type="xs:string"/>
+        <xs:attribute name="emitterCountryCode" type="xs:string"/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+        <xs:attribute name="errorCode" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="paymentOrderBindingParams">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+        </xs:sequence>
+        <xs:attribute name="mdOrder" type="xs:string"/>
+        <xs:attribute name="bindingId" type="xs:string"/>
+        <xs:attribute name="language" type="xs:string"/>
+        <xs:attribute name="ip" type="xs:string"/>
+        <xs:attribute name="cvc" type="xs:string"/>
+        <xs:attribute name="email" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="paymentOrderResult">
+        <xs:sequence/>
+        <xs:attribute name="errorCode" type="xs:int" use="required"/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+        <xs:attribute name="info" type="xs:string"/>
+        <xs:attribute name="redirect" type="xs:string"/>
+        <xs:attribute name="acsUrl" type="xs:string"/>
+        <xs:attribute name="paReq" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="orderResult">
+        <xs:sequence/>
+        <xs:attribute name="errorCode" type="xs:int" use="required"/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="abstractServiceRequest">
+        <xs:sequence/>
+        <xs:attribute name="language" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="reversalOrderParams">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceRequest">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+            </xs:sequence>
+            <xs:attribute name="orderId" type="xs:string"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="paymentOrderOtherWayParams">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceRequest">
+            <xs:sequence/>
+            <xs:attribute name="orderId" type="xs:string"/>
+            <xs:attribute name="paymentWay" type="xs:string"/>
+            <xs:attribute name="ip" type="xs:string"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="paymentOrderOtherWayResult">
+        <xs:sequence/>
+        <xs:attribute name="errorCode" type="xs:int" use="required"/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+        <xs:attribute name="info" type="xs:string"/>
+        <xs:attribute name="redirect" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="loginParams">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceRequest">
+            <xs:sequence/>
+            <xs:attribute name="login" type="xs:string"/>
+            <xs:attribute name="password" type="xs:string"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="extendBindingRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceRequest">
+            <xs:sequence/>
+            <xs:attribute name="bindingId" type="xs:string"/>
+            <xs:attribute name="newExpiry" type="xs:string"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType abstract="true" name="abstractServiceResponse">
+        <xs:sequence/>
+        <xs:attribute name="errorCode" type="xs:string"/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+        <xs:attribute name="userMessage" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="extendBindingResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceResponse">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="paymentOrderParams">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+        </xs:sequence>
+        <xs:attribute name="orderId" type="xs:string"/>
+        <xs:attribute name="year" type="xs:string"/>
+        <xs:attribute name="month" type="xs:string"/>
+        <xs:attribute name="pan" type="xs:string"/>
+        <xs:attribute name="cvc" type="xs:string"/>
+        <xs:attribute name="cardholderName" type="xs:string"/>
+        <xs:attribute name="language" type="xs:string"/>
+        <xs:attribute name="ip" type="xs:string"/>
+        <xs:attribute name="email" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="addParamsRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+        </xs:sequence>
+        <xs:attribute name="orderId" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="orderStatusRequest">
+        <xs:sequence/>
+        <xs:attribute name="orderId" type="xs:string"/>
+        <xs:attribute name="language" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="orderStatusResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+          <xs:element minOccurs="0" name="orderBundle" type="tns:orderBundle"/>
+        </xs:sequence>
+        <xs:attribute name="orderStatus" type="xs:int" use="required"/>
+        <xs:attribute name="errorCode" type="xs:int" use="required"/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+        <xs:attribute name="orderNumber" type="xs:string"/>
+        <xs:attribute name="pan" type="xs:string"/>
+        <xs:attribute name="expiration" type="xs:string"/>
+        <xs:attribute name="cardholderName" type="xs:string"/>
+        <xs:attribute name="amount" type="xs:int" use="required"/>
+        <xs:attribute name="currency" type="xs:string"/>
+        <xs:attribute name="approvalCode" type="xs:string"/>
+        <xs:attribute name="authCode" type="xs:int" use="required"/>
+        <xs:attribute name="ip" type="xs:string"/>
+        <xs:attribute name="date" type="xs:dateTime"/>
+        <xs:attribute name="orderDescription" type="xs:string"/>
+        <xs:attribute name="merchantLogin" type="xs:string"/>
+        <xs:attribute name="actionCodeDescription" type="xs:string"/>
+        <xs:attribute name="clientId" type="xs:string"/>
+        <xs:attribute name="bindingId" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="orderBundle">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orderCreationDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="customerDetails" type="tns:customerDetails"/>
+          <xs:element name="cartItems" type="tns:cartItems"/>
+          <xs:element minOccurs="0" name="loyalties" type="tns:loyalties"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="customerDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="phone" type="xs:string"/>
+          <xs:element minOccurs="0" name="contact" type="xs:string"/>
+          <xs:element minOccurs="0" name="deliveryInfo" type="tns:deliveryInfo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deliveryInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deliveryType" type="xs:string"/>
+          <xs:element name="country" type="xs:string"/>
+          <xs:element name="city" type="xs:string"/>
+          <xs:element name="postAddress" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cartItems">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="items" nillable="true" type="tns:item"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="item">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="itemDetails" type="tns:itemDetails"/>
+          <xs:element name="quantity" type="tns:quantity"/>
+          <xs:element name="itemAmount" type="xs:long"/>
+          <xs:element name="itemCurrency" type="xs:int"/>
+          <xs:element name="itemCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="discount" type="tns:discount"/>
+          <xs:element minOccurs="0" name="agentInterest" type="tns:agentInterest"/>
+        </xs:sequence>
+        <xs:attribute name="positionId" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="itemDetails">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="itemDetailsParams" nillable="true" type="tns:itemDetailsParam"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="itemDetailsParam">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="name" type="xs:string"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="quantity">
+        <xs:simpleContent>
+          <xs:extension base="xs:float">
+            <xs:attribute name="measure" type="xs:string"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="discount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="discountType" type="xs:string"/>
+          <xs:element minOccurs="0" name="discountValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agentInterest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="interestType" type="xs:string"/>
+          <xs:element minOccurs="0" name="interestValue" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loyalties">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="loyalties" nillable="true" type="tns:loyalty"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loyalty">
+        <xs:sequence>
+          <xs:element name="bonusAmountForDebit" type="xs:long"/>
+          <xs:element name="bonusAmountForCredit" type="xs:long"/>
+        </xs:sequence>
+        <xs:attribute name="loyaltyProgramName" type="xs:string"/>
+        <xs:attribute name="positionId" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="orderParams">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="returnUrl" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+          <xs:element minOccurs="0" name="clientId" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderBundle" type="tns:orderBundle"/>
+        </xs:sequence>
+        <xs:attribute name="merchantOrderNumber" type="xs:string"/>
+        <xs:attribute name="description" type="xs:string"/>
+        <xs:attribute name="amount" type="xs:int"/>
+        <xs:attribute name="currency" type="xs:string"/>
+        <xs:attribute name="language" type="xs:string"/>
+        <xs:attribute name="pageView" type="tns:pageViewEnum"/>
+        <xs:attribute name="sessionTimeoutSecs" type="xs:int"/>
+      </xs:complexType>
+      <xs:complexType name="registerOrderResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="formUrl" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="orderId" type="xs:string"/>
+        <xs:attribute name="errorCode" type="xs:int" use="required"/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="depositOrderParams">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="orderBundle" type="tns:orderBundle"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+            </xs:sequence>
+            <xs:attribute name="orderId" type="xs:string"/>
+            <xs:attribute name="depositAmount" type="xs:int"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getOrderStatusExtendedRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:orderStatusRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="merchantOrderNumber" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getOrderStatusExtendedResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="merchantOrderParams" type="tns:serviceParam"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="attributes" type="tns:serviceParam"/>
+              <xs:element minOccurs="0" name="cardAuthInfo" type="tns:cardAuthInfo"/>
+              <xs:element minOccurs="0" name="bindingInfo" type="tns:cardBindingInfo"/>
+              <xs:element minOccurs="0" name="authDateTime" type="xs:dateTime"/>
+              <xs:element minOccurs="0" name="terminalId" type="xs:string"/>
+              <xs:element minOccurs="0" name="authRefNum" type="xs:string"/>
+              <xs:element minOccurs="0" name="paymentAmountInfo" type="tns:paymentAmountInfo"/>
+              <xs:element minOccurs="0" name="bankInfo" type="tns:bankInfo"/>
+              <xs:element minOccurs="0" name="orderBundle" type="tns:orderBundle"/>
+            </xs:sequence>
+            <xs:attribute name="orderNumber" type="xs:string"/>
+            <xs:attribute name="orderStatus" type="xs:int"/>
+            <xs:attribute name="actionCode" type="xs:int"/>
+            <xs:attribute name="actionCodeDescription" type="xs:string"/>
+            <xs:attribute name="amount" type="xs:int"/>
+            <xs:attribute name="currency" type="xs:string"/>
+            <xs:attribute name="date" type="xs:dateTime"/>
+            <xs:attribute name="orderDescription" type="xs:string"/>
+            <xs:attribute name="ip" type="xs:string"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="cardAuthInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="secureAuthInfo" type="tns:secureAuthInfo"/>
+        </xs:sequence>
+        <xs:attribute name="maskedPan" type="xs:string"/>
+        <xs:attribute name="expiration" type="xs:string"/>
+        <xs:attribute name="cardholderName" type="xs:string"/>
+        <xs:attribute name="approvalCode" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="secureAuthInfo">
+        <xs:sequence>
+          <xs:element name="eci" type="xs:int"/>
+          <xs:element minOccurs="0" name="threeDSInfo" type="tns:threeDSInfo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="threeDSInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cavv" type="xs:string"/>
+          <xs:element minOccurs="0" name="xid" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cardBindingInfo">
+        <xs:sequence/>
+        <xs:attribute name="clientId" type="xs:string"/>
+        <xs:attribute name="bindingId" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="paymentAmountInfo">
+        <xs:sequence/>
+        <xs:attribute name="paymentState" type="tns:transactionState"/>
+        <xs:attribute name="approvedAmount" type="xs:int" use="required"/>
+        <xs:attribute name="depositedAmount" type="xs:int" use="required"/>
+        <xs:attribute name="refundedAmount" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="bankInfo">
+        <xs:sequence/>
+        <xs:attribute name="bankName" type="xs:string"/>
+        <xs:attribute name="bankCountryCode" type="xs:string"/>
+        <xs:attribute name="bankCountryName" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="refundOrderParams">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceRequest">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="refundItems" type="tns:cartItems"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="params" type="tns:serviceParam"/>
+            </xs:sequence>
+            <xs:attribute name="orderId" type="xs:string"/>
+            <xs:attribute name="refundAmount" type="xs:int"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getBindingsRequest">
+        <xs:sequence/>
+        <xs:attribute name="clientId" type="xs:string"/>
+        <xs:attribute name="bindingId" type="xs:string"/>
+        <xs:attribute name="showExpired" type="xs:boolean" use="required"/>
+        <xs:attribute name="language" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="getBindingsResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceResponse">
+            <xs:sequence>
+              <xs:element name="bindings">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="binding" type="tns:binding"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="binding">
+        <xs:sequence/>
+        <xs:attribute name="bindingId" type="xs:string"/>
+        <xs:attribute name="maskedPan" type="xs:string"/>
+        <xs:attribute name="expiryDate" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="finishThreeDSRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:abstractServiceRequest">
+            <xs:sequence/>
+            <xs:attribute name="md" type="xs:string" use="required"/>
+            <xs:attribute name="paRes" type="xs:string" use="required"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="finishThreeDSResponse">
+        <xs:sequence/>
+        <xs:attribute name="errorMessage" type="xs:string"/>
+        <xs:attribute name="errorCode" type="xs:int" use="required"/>
+        <xs:attribute name="returnUrl" type="xs:string"/>
+      </xs:complexType>
+      <xs:simpleType name="transactionState">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CREATED"/>
+          <xs:enumeration value="APPROVED"/>
+          <xs:enumeration value="DECLINED"/>
+          <xs:enumeration value="REVERSED"/>
+          <xs:enumeration value="DEPOSITED"/>
+          <xs:enumeration value="REFUNDED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="pageViewEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MOBILE"/>
+          <xs:enumeration value="DESKTOP"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType final="#all" name="orderInfoArray">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="tns:orderInfo"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="paymentOrderOtherWayResponse">
+    <wsdl:part name="return" type="ns1:paymentOrderOtherWayResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastOrders">
+    <wsdl:part name="from" type="xsd:dateTime"></wsdl:part>
+    <wsdl:part name="to" type="xsd:dateTime"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="depositOrder">
+    <wsdl:part name="order" type="ns1:depositOrderParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderStatusResponse">
+    <wsdl:part name="return" type="ns1:orderStatusResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reverseOrder">
+    <wsdl:part name="order" type="ns1:reversalOrderParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verifyEnrollment">
+    <wsdl:part name="pan" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLastOrdersResponse">
+    <wsdl:part name="return" type="ns1:orderInfoArray"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unBindCardResponse">
+    <wsdl:part name="return" type="ns1:orderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="refundOrder">
+    <wsdl:part name="order" type="ns1:refundOrderParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderStatusExtendedResponse">
+    <wsdl:part name="return" type="ns1:getOrderStatusExtendedResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerOrderPreAuthResponse">
+    <wsdl:part name="return" type="ns1:registerOrderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBindings">
+    <wsdl:part name="request" type="ns1:getBindingsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reverseOrderResponse">
+    <wsdl:part name="return" type="ns1:orderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerOrderResponse">
+    <wsdl:part name="return" type="ns1:registerOrderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="unBindCard">
+    <wsdl:part name="bindingId" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="paymentOrderBindingResponse">
+    <wsdl:part name="return" type="ns1:paymentOrderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="refundOrderResponse">
+    <wsdl:part name="return" type="ns1:orderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderStatusExtended">
+    <wsdl:part name="order" type="ns1:getOrderStatusExtendedRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderStatus">
+    <wsdl:part name="order" type="ns1:orderStatusRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bindCard">
+    <wsdl:part name="bindingId" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="paymentOrder">
+    <wsdl:part name="order" type="ns1:paymentOrderParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finishThreeDsResponse">
+    <wsdl:part name="return" type="ns1:finishThreeDSResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finishThreeDs">
+    <wsdl:part name="request" type="ns1:finishThreeDSRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerOrderPreAuth">
+    <wsdl:part name="order" type="ns1:orderParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="depositOrderResponse">
+    <wsdl:part name="return" type="ns1:orderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registerOrder">
+    <wsdl:part name="order" type="ns1:orderParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkAuthenticateResponse">
+    <wsdl:part name="return" type="ns1:orderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bindCardResponse">
+    <wsdl:part name="return" type="ns1:orderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="paymentOrderResponse">
+    <wsdl:part name="return" type="ns1:paymentOrderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="extendBinding">
+    <wsdl:part name="request" type="ns1:extendBindingRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="paymentOrderBinding">
+    <wsdl:part name="order" type="ns1:paymentOrderBindingParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="extendBindingResponse">
+    <wsdl:part name="return" type="ns1:extendBindingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addParams">
+    <wsdl:part name="request" type="ns1:addParamsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="paymentOrderOtherWay">
+    <wsdl:part name="order" type="ns1:paymentOrderOtherWayParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkAuthenticate">
+    <wsdl:part name="login" type="ns1:loginParams"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addParamsResponse">
+    <wsdl:part name="return" type="ns1:orderResult"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBindingsResponse">
+    <wsdl:part name="return" type="ns1:getBindingsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verifyEnrollmentResponse">
+    <wsdl:part name="return" type="ns1:verifyEnrollmentResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MerchantService">
+    <wsdl:operation name="getLastOrders">
+      <wsdl:input message="ns1:getLastOrders" name="getLastOrders"></wsdl:input>
+      <wsdl:output message="ns1:getLastOrdersResponse" name="getLastOrdersResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyEnrollment">
+      <wsdl:input message="ns1:verifyEnrollment" name="verifyEnrollment"></wsdl:input>
+      <wsdl:output message="ns1:verifyEnrollmentResponse" name="verifyEnrollmentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentOrderBinding">
+      <wsdl:input message="ns1:paymentOrderBinding" name="paymentOrderBinding"></wsdl:input>
+      <wsdl:output message="ns1:paymentOrderBindingResponse" name="paymentOrderBindingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bindCard">
+      <wsdl:input message="ns1:bindCard" name="bindCard"></wsdl:input>
+      <wsdl:output message="ns1:bindCardResponse" name="bindCardResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverseOrder">
+      <wsdl:input message="ns1:reverseOrder" name="reverseOrder"></wsdl:input>
+      <wsdl:output message="ns1:reverseOrderResponse" name="reverseOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentOrderOtherWay">
+      <wsdl:input message="ns1:paymentOrderOtherWay" name="paymentOrderOtherWay"></wsdl:input>
+      <wsdl:output message="ns1:paymentOrderOtherWayResponse" name="paymentOrderOtherWayResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkAuthenticate">
+      <wsdl:input message="ns1:checkAuthenticate" name="checkAuthenticate"></wsdl:input>
+      <wsdl:output message="ns1:checkAuthenticateResponse" name="checkAuthenticateResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extendBinding">
+      <wsdl:input message="ns1:extendBinding" name="extendBinding"></wsdl:input>
+      <wsdl:output message="ns1:extendBindingResponse" name="extendBindingResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentOrder">
+      <wsdl:input message="ns1:paymentOrder" name="paymentOrder"></wsdl:input>
+      <wsdl:output message="ns1:paymentOrderResponse" name="paymentOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addParams">
+      <wsdl:input message="ns1:addParams" name="addParams"></wsdl:input>
+      <wsdl:output message="ns1:addParamsResponse" name="addParamsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unBindCard">
+      <wsdl:input message="ns1:unBindCard" name="unBindCard"></wsdl:input>
+      <wsdl:output message="ns1:unBindCardResponse" name="unBindCardResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderStatus">
+      <wsdl:input message="ns1:getOrderStatus" name="getOrderStatus"></wsdl:input>
+      <wsdl:output message="ns1:getOrderStatusResponse" name="getOrderStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOrderPreAuth">
+      <wsdl:input message="ns1:registerOrderPreAuth" name="registerOrderPreAuth"></wsdl:input>
+      <wsdl:output message="ns1:registerOrderPreAuthResponse" name="registerOrderPreAuthResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="depositOrder">
+      <wsdl:input message="ns1:depositOrder" name="depositOrder"></wsdl:input>
+      <wsdl:output message="ns1:depositOrderResponse" name="depositOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderStatusExtended">
+      <wsdl:input message="ns1:getOrderStatusExtended" name="getOrderStatusExtended"></wsdl:input>
+      <wsdl:output message="ns1:getOrderStatusExtendedResponse" name="getOrderStatusExtendedResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="refundOrder">
+      <wsdl:input message="ns1:refundOrder" name="refundOrder"></wsdl:input>
+      <wsdl:output message="ns1:refundOrderResponse" name="refundOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBindings">
+      <wsdl:input message="ns1:getBindings" name="getBindings"></wsdl:input>
+      <wsdl:output message="ns1:getBindingsResponse" name="getBindingsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOrder">
+      <wsdl:input message="ns1:registerOrder" name="registerOrder"></wsdl:input>
+      <wsdl:output message="ns1:registerOrderResponse" name="registerOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finishThreeDs">
+      <wsdl:input message="ns1:finishThreeDs" name="finishThreeDs"></wsdl:input>
+      <wsdl:output message="ns1:finishThreeDsResponse" name="finishThreeDsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="bindCard" bindingOperationName="bindCard" type="Request-Response" outputName="bindCardResponse" inputName="bindCard" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:bindCard>
+         <bindingId>?</bindingId>
+      </mer:bindCard>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/bindCard"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkAuthenticate" bindingOperationName="checkAuthenticate" type="Request-Response" outputName="checkAuthenticateResponse" inputName="checkAuthenticate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:checkAuthenticate>
+         <login language="?" login="?" password="?"/>
+      </mer:checkAuthenticate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/checkAuthenticate"/></con:call></con:operation><con:operation isOneWay="false" action="" name="depositOrder" bindingOperationName="depositOrder" type="Request-Response" outputName="depositOrderResponse" inputName="depositOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:depositOrder>
+         <order language="?" orderId="?" depositAmount="?">
+            <!--Optional:-->
+            <orderBundle>
+               <!--Optional:-->
+               <orderCreationDate>?</orderCreationDate>
+               <!--Optional:-->
+               <customerDetails>
+                  <!--Optional:-->
+                  <email>?</email>
+                  <!--Optional:-->
+                  <phone>?</phone>
+                  <!--Optional:-->
+                  <contact>?</contact>
+                  <!--Optional:-->
+                  <deliveryInfo>
+                     <!--Optional:-->
+                     <deliveryType>?</deliveryType>
+                     <country>?</country>
+                     <city>?</city>
+                     <postAddress>?</postAddress>
+                  </deliveryInfo>
+               </customerDetails>
+               <cartItems>
+                  <!--Zero or more repetitions:-->
+                  <items positionId="?">
+                     <name>?</name>
+                     <!--Optional:-->
+                     <itemDetails>
+                        <!--Zero or more repetitions:-->
+                        <itemDetailsParams name="?">?</itemDetailsParams>
+                     </itemDetails>
+                     <quantity measure="?">?</quantity>
+                     <itemAmount>?</itemAmount>
+                     <itemCurrency>?</itemCurrency>
+                     <itemCode>?</itemCode>
+                     <!--Optional:-->
+                     <discount>
+                        <!--Optional:-->
+                        <discountType>?</discountType>
+                        <!--Optional:-->
+                        <discountValue>?</discountValue>
+                     </discount>
+                     <!--Optional:-->
+                     <agentInterest>
+                        <!--Optional:-->
+                        <interestType>?</interestType>
+                        <!--Optional:-->
+                        <interestValue>?</interestValue>
+                     </agentInterest>
+                  </items>
+               </cartItems>
+               <!--Optional:-->
+               <loyalties>
+                  <!--Zero or more repetitions:-->
+                  <loyalties loyaltyProgramName="?" positionId="?">
+                     <bonusAmountForDebit>?</bonusAmountForDebit>
+                     <bonusAmountForCredit>?</bonusAmountForCredit>
+                  </loyalties>
+               </loyalties>
+            </orderBundle>
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+         </order>
+      </mer:depositOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/depositOrder"/></con:call></con:operation><con:operation isOneWay="false" action="" name="extendBinding" bindingOperationName="extendBinding" type="Request-Response" outputName="extendBindingResponse" inputName="extendBinding" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:extendBinding>
+         <request language="?" bindingId="?" newExpiry="?"/>
+      </mer:extendBinding>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/extendBinding"/></con:call></con:operation><con:operation isOneWay="false" action="" name="finishThreeDs" bindingOperationName="finishThreeDs" type="Request-Response" outputName="finishThreeDsResponse" inputName="finishThreeDs" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:finishThreeDs>
+         <request language="?" md="?" paRes="?"/>
+      </mer:finishThreeDs>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/finishThreeDs"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getBindings" bindingOperationName="getBindings" type="Request-Response" outputName="getBindingsResponse" inputName="getBindings" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:getBindings>
+         <request clientId="?" bindingId="?" showExpired="?" language="?"/>
+      </mer:getBindings>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/getBindings"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getLastOrders" bindingOperationName="getLastOrders" type="Request-Response" outputName="getLastOrdersResponse" inputName="getLastOrders" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:getLastOrders>
+         <from>?</from>
+         <to>?</to>
+      </mer:getLastOrders>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/getLastOrders"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getOrderStatus" bindingOperationName="getOrderStatus" type="Request-Response" outputName="getOrderStatusResponse" inputName="getOrderStatus" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:getOrderStatus>
+         <order orderId="?" language="?"/>
+      </mer:getOrderStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/getOrderStatus"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getOrderStatusExtended" bindingOperationName="getOrderStatusExtended" type="Request-Response" outputName="getOrderStatusExtendedResponse" inputName="getOrderStatusExtended" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:getOrderStatusExtended>
+         <order orderId="?" language="?">
+            <!--Optional:-->
+            <merchantOrderNumber>?</merchantOrderNumber>
+         </order>
+      </mer:getOrderStatusExtended>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/getOrderStatusExtended"/></con:call></con:operation><con:operation isOneWay="false" action="" name="paymentOrder" bindingOperationName="paymentOrder" type="Request-Response" outputName="paymentOrderResponse" inputName="paymentOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:paymentOrder>
+         <order orderId="?" year="?" month="?" pan="?" cvc="?" cardholderName="?" language="?" ip="?" email="?">
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+         </order>
+      </mer:paymentOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/paymentOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="paymentOrderBinding" bindingOperationName="paymentOrderBinding" type="Request-Response" outputName="paymentOrderBindingResponse" inputName="paymentOrderBinding" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:paymentOrderBinding>
+         <order mdOrder="?" bindingId="?" language="?" ip="?" cvc="?" email="?">
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+         </order>
+      </mer:paymentOrderBinding>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/paymentOrderBinding"/></con:call></con:operation><con:operation isOneWay="false" action="" name="paymentOrderOtherWay" bindingOperationName="paymentOrderOtherWay" type="Request-Response" outputName="paymentOrderOtherWayResponse" inputName="paymentOrderOtherWay" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:paymentOrderOtherWay>
+         <order language="?" orderId="?" paymentWay="?" ip="?"/>
+      </mer:paymentOrderOtherWay>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/paymentOrderOtherWay"/></con:call></con:operation><con:operation isOneWay="false" action="" name="refundOrder" bindingOperationName="refundOrder" type="Request-Response" outputName="refundOrderResponse" inputName="refundOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:refundOrder>
+         <order language="?" orderId="?" refundAmount="?">
+            <!--Optional:-->
+            <refundItems>
+               <!--Zero or more repetitions:-->
+               <items positionId="?">
+                  <name>?</name>
+                  <!--Optional:-->
+                  <itemDetails>
+                     <!--Zero or more repetitions:-->
+                     <itemDetailsParams name="?">?</itemDetailsParams>
+                  </itemDetails>
+                  <quantity measure="?">?</quantity>
+                  <itemAmount>?</itemAmount>
+                  <itemCurrency>?</itemCurrency>
+                  <itemCode>?</itemCode>
+                  <!--Optional:-->
+                  <discount>
+                     <!--Optional:-->
+                     <discountType>?</discountType>
+                     <!--Optional:-->
+                     <discountValue>?</discountValue>
+                  </discount>
+                  <!--Optional:-->
+                  <agentInterest>
+                     <!--Optional:-->
+                     <interestType>?</interestType>
+                     <!--Optional:-->
+                     <interestValue>?</interestValue>
+                  </agentInterest>
+               </items>
+            </refundItems>
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+         </order>
+      </mer:refundOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/refundOrder"/></con:call></con:operation><con:operation isOneWay="false" action="" name="registerOrder" bindingOperationName="registerOrder" type="Request-Response" outputName="registerOrderResponse" inputName="registerOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:registerOrder>
+         <order merchantOrderNumber="?" description="?" amount="?" currency="?" language="?" pageView="?" sessionTimeoutSecs="?">
+            <!--Optional:-->
+            <returnUrl>?</returnUrl>
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+            <!--Optional:-->
+            <clientId>?</clientId>
+            <!--Optional:-->
+            <orderBundle>
+               <!--Optional:-->
+               <orderCreationDate>?</orderCreationDate>
+               <!--Optional:-->
+               <customerDetails>
+                  <!--Optional:-->
+                  <email>?</email>
+                  <!--Optional:-->
+                  <phone>?</phone>
+                  <!--Optional:-->
+                  <contact>?</contact>
+                  <!--Optional:-->
+                  <deliveryInfo>
+                     <!--Optional:-->
+                     <deliveryType>?</deliveryType>
+                     <country>?</country>
+                     <city>?</city>
+                     <postAddress>?</postAddress>
+                  </deliveryInfo>
+               </customerDetails>
+               <cartItems>
+                  <!--Zero or more repetitions:-->
+                  <items positionId="?">
+                     <name>?</name>
+                     <!--Optional:-->
+                     <itemDetails>
+                        <!--Zero or more repetitions:-->
+                        <itemDetailsParams name="?">?</itemDetailsParams>
+                     </itemDetails>
+                     <quantity measure="?">?</quantity>
+                     <itemAmount>?</itemAmount>
+                     <itemCurrency>?</itemCurrency>
+                     <itemCode>?</itemCode>
+                     <!--Optional:-->
+                     <discount>
+                        <!--Optional:-->
+                        <discountType>?</discountType>
+                        <!--Optional:-->
+                        <discountValue>?</discountValue>
+                     </discount>
+                     <!--Optional:-->
+                     <agentInterest>
+                        <!--Optional:-->
+                        <interestType>?</interestType>
+                        <!--Optional:-->
+                        <interestValue>?</interestValue>
+                     </agentInterest>
+                  </items>
+               </cartItems>
+               <!--Optional:-->
+               <loyalties>
+                  <!--Zero or more repetitions:-->
+                  <loyalties loyaltyProgramName="?" positionId="?">
+                     <bonusAmountForDebit>?</bonusAmountForDebit>
+                     <bonusAmountForCredit>?</bonusAmountForCredit>
+                  </loyalties>
+               </loyalties>
+            </orderBundle>
+         </order>
+      </mer:registerOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>test</con:username><con:password>testPwd</con:password><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/registerOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="registerOrderPreAuth" bindingOperationName="registerOrderPreAuth" type="Request-Response" outputName="registerOrderPreAuthResponse" inputName="registerOrderPreAuth" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:registerOrderPreAuth>
+         <order merchantOrderNumber="?" description="?" amount="?" currency="?" language="?" pageView="?" sessionTimeoutSecs="?">
+            <!--Optional:-->
+            <returnUrl>?</returnUrl>
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+            <!--Optional:-->
+            <clientId>?</clientId>
+            <!--Optional:-->
+            <orderBundle>
+               <!--Optional:-->
+               <orderCreationDate>?</orderCreationDate>
+               <!--Optional:-->
+               <customerDetails>
+                  <!--Optional:-->
+                  <email>?</email>
+                  <!--Optional:-->
+                  <phone>?</phone>
+                  <!--Optional:-->
+                  <contact>?</contact>
+                  <!--Optional:-->
+                  <deliveryInfo>
+                     <!--Optional:-->
+                     <deliveryType>?</deliveryType>
+                     <country>?</country>
+                     <city>?</city>
+                     <postAddress>?</postAddress>
+                  </deliveryInfo>
+               </customerDetails>
+               <cartItems>
+                  <!--Zero or more repetitions:-->
+                  <items positionId="?">
+                     <name>?</name>
+                     <!--Optional:-->
+                     <itemDetails>
+                        <!--Zero or more repetitions:-->
+                        <itemDetailsParams name="?">?</itemDetailsParams>
+                     </itemDetails>
+                     <quantity measure="?">?</quantity>
+                     <itemAmount>?</itemAmount>
+                     <itemCurrency>?</itemCurrency>
+                     <itemCode>?</itemCode>
+                     <!--Optional:-->
+                     <discount>
+                        <!--Optional:-->
+                        <discountType>?</discountType>
+                        <!--Optional:-->
+                        <discountValue>?</discountValue>
+                     </discount>
+                     <!--Optional:-->
+                     <agentInterest>
+                        <!--Optional:-->
+                        <interestType>?</interestType>
+                        <!--Optional:-->
+                        <interestValue>?</interestValue>
+                     </agentInterest>
+                  </items>
+               </cartItems>
+               <!--Optional:-->
+               <loyalties>
+                  <!--Zero or more repetitions:-->
+                  <loyalties loyaltyProgramName="?" positionId="?">
+                     <bonusAmountForDebit>?</bonusAmountForDebit>
+                     <bonusAmountForCredit>?</bonusAmountForCredit>
+                  </loyalties>
+               </loyalties>
+            </orderBundle>
+         </order>
+      </mer:registerOrderPreAuth>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/registerOrderPreAuth"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="reverseOrder" bindingOperationName="reverseOrder" type="Request-Response" outputName="reverseOrderResponse" inputName="reverseOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:reverseOrder>
+         <order language="?" orderId="?">
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+         </order>
+      </mer:reverseOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/reverseOrder"/></con:call></con:operation><con:operation isOneWay="false" action="" name="unBindCard" bindingOperationName="unBindCard" type="Request-Response" outputName="unBindCardResponse" inputName="unBindCard" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:unBindCard>
+         <bindingId>?</bindingId>
+      </mer:unBindCard>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/unBindCard"/></con:call></con:operation><con:operation isOneWay="false" action="" name="verifyEnrollment" bindingOperationName="verifyEnrollment" type="Request-Response" outputName="verifyEnrollmentResponse" inputName="verifyEnrollment" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:verifyEnrollment>
+         <pan>?</pan>
+      </mer:verifyEnrollment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/verifyEnrollment"/></con:call></con:operation><con:operation isOneWay="false" action="" name="addParams" bindingOperationName="addParams" type="Request-Response" outputName="addParamsResponse" inputName="addParams" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:addParams>
+         <request orderId="?">
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+         </request>
+      </mer:addParams>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.merchant.api.web.phoenix.bpc.ru/MerchantService/addParams"/></con:call></con:operation></con:interface><con:testSuite name="tests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="register" searchProperties="true" id="d4fbb3a1-1c46-47df-ba34-31ae3f453c25"><con:settings/><con:testStep type="groovy" name="createOrderNumberScript"><con:settings/><con:config><script>import java.util.*;
+import java.text.*;
+import java.lang.String;
+import org.codehaus.groovy.runtime.TimeCategory;
+import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang.RandomStringUtils;
+import groovy.json.JsonBuilder;
+import groovy.json.JsonSlurper;
+import groovy.json.JsonOutput;
+import java.security.MessageDigest;
+
+long curTime = System.currentTimeMillis();
+
+String curStringDate = new SimpleDateFormat("yyyyMMddhhmmss").format(curTime);
+
+curTime2 = curTime.toString();
+
+def s4 =  curTime2.substring(curTime2.length() -3,curTime2.length());
+
+curStringDate= curStringDate+s4;
+def propertiesRegister = testRunner.testCase.getTestStepByName( "Properties");
+propertiesRegister.setPropertyValue( "OrderNumber", curStringDate);</script></con:config></con:testStep><con:testStep type="properties" name="Properties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>OrderNumber</con:name><con:value>20131127121411226</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>username</con:name><con:sourceType>username</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Username</con:targetType><con:targetStep>registerOrder</con:targetStep><con:targetPath/></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" entitize="false"><con:name>pwd</con:name><con:sourceType>pwd</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Password</con:targetType><con:targetStep>registerOrder</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>endPoint</con:name><con:sourceType>endPoint</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Endpoint</con:targetType><con:targetStep>registerOrder</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>orderNumber</con:name><con:sourceType>OrderNumber</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>registerOrder</con:targetStep><con:targetPath>//@ merchantOrderNumber</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="registerOrder"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MerchantServiceImplServiceSoapBinding</con:interface><con:operation>registerOrder</con:operation><con:request name="registerOrder" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:registerOrder>
+         <order merchantOrderNumber="20131127121411226" description="fgfb" amount="1000" currency="810" language="ru" pageView="?">
+            <!--Optional:-->
+            <returnUrl>""</returnUrl>
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+            <!--Optional:-->
+
+         </order>
+      </mer:registerOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:username>test</con:username><con:password>testPwd</con:password><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="mdTransfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>orderId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>registerOrder</con:sourceStep><con:sourcePath>//@orderId</con:sourcePath><con:targetType>orderId</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>orderNumber</con:name><con:sourceType>OrderNumber</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:sourcePath/><con:targetType>orderNumber</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers></con:config></con:testStep><con:properties><con:property><con:name>username</con:name><con:value>test</con:value></con:property><con:property><con:name>pwd</con:name><con:value>testPwd</con:value></con:property><con:property><con:name>amount</con:name><con:value>1000</con:value></con:property><con:property><con:name>currency</con:name><con:value>810</con:value></con:property><con:property><con:name>orderId</con:name><con:value>d41e799d-e637-48bf-8402-55cf35ba0775</con:value></con:property><con:property><con:name>orderNumber</con:name><con:value>20131127121411226</con:value></con:property><con:property><con:name>endPoint</con:name><con:value>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="paymentOrder" searchProperties="true" id="dc6a8c67-4333-432d-a292-3491a55adc9e"><con:settings/><con:testStep type="properties" name="Properties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>paReq</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>redirect</con:name><con:value>https://3dsec.sberbank.ru:443/payment/rest/finish3ds.do</con:value></con:property><con:property><con:name>acsUrl</con:name><con:value>https://test.paymentgate.ru/acs/auth/start.do</con:value></con:property><con:property><con:name>info</con:name><con:value>Ваш платёж обработан, происходит переадресация...</con:value></con:property><con:property><con:name>errorCode</con:name><con:value>0</con:value></con:property><con:property><con:name>MD</con:name><con:value>d41e799d-e637-48bf-8402-55cf35ba0775</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>orderId</con:name><con:sourceType>orderId</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@orderId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>pan</con:name><con:sourceType>pan</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@pan</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>cvc</con:name><con:sourceType>cvc</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@cvc</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" entitize="false" transferToAll="false"><con:name>cardHolderName</con:name><con:sourceType>cardholderName</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@cardholderName</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>ip</con:name><con:sourceType>ip</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@ip</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>email</con:name><con:sourceType>email</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@email</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>paramsName</con:name><con:sourceType>params name</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@name</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false"><con:name>value</con:name><con:sourceType>value</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@value</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>username</con:name><con:sourceType>user</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Username</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath/></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>pwd</con:name><con:sourceType>pwd</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Password</con:targetType><con:targetStep>paymentOrder</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>endpiont</con:name><con:sourceType>endpiont</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Endpoint</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath/></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>month</con:name><con:sourceType>month</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@month</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>year</con:name><con:sourceType>year</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>paymentOrder</con:targetStep><con:targetPath>//@year</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="paymentOrder"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MerchantServiceImplServiceSoapBinding</con:interface><con:operation>paymentOrder</con:operation><con:request name="paymentOrder" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:paymentOrder>
+         <order orderId="d41e799d-e637-48bf-8402-55cf35ba0775" year="2015" month="12" pan="4111111111111111" cvc="123" cardholderName="A Moriarty" language="ru" ip="192.168.0.1" email="bloyh@mail.ru">
+            <!--Zero or more repetitions:-->
+            <params name="" value=""/>
+         </order>
+      </mer:paymentOrder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:credentials><con:username>test</con:username><con:password>testPwd</con:password><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="dataTransfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>paReq</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>paymentOrder</con:sourceStep><con:sourcePath>//@paReq</con:sourcePath><con:targetType>paReq</con:targetType><con:targetStep>Properties</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>acsUrl</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>paymentOrder</con:sourceStep><con:sourcePath>//@acsUrl</con:sourcePath><con:targetType>acsUrl</con:targetType><con:targetStep>Properties</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>redirect</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>paymentOrder</con:sourceStep><con:sourcePath>//@redirect</con:sourcePath><con:targetType>redirect</con:targetType><con:targetStep>Properties</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" transferChildNodes="false" entitize="false"><con:name>answer</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>paymentOrder</con:sourceStep><con:sourcePath>//@info</con:sourcePath><con:targetType>info</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" entitize="false" transferChildNodes="false" useXQuery="false" ignoreEmpty="false"><con:name>errorCode</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>paymentOrder</con:sourceStep><con:sourcePath>//@errorCode</con:sourcePath><con:targetType>errorCode</con:targetType><con:targetStep>Properties</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" useXQuery="false" transferChildNodes="false" ignoreEmpty="false"><con:name>MD</con:name><con:sourceType>orderId</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:sourcePath/><con:targetType>MD</con:targetType><con:targetStep>Properties</con:targetStep><con:targetPath/></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>orderId</con:name><con:sourceType>orderId</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>orderStatusRequest</con:targetStep><con:targetPath>//@orderId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="splitScript"><con:settings/><con:config><script>
+
+def properties = testRunner.testCase.getTestStepByName( "Properties");
+
+def acsUrl	= properties.getPropertyValue( "acsUrl");
+
+if(acsUrl == null)
+testRunner.gotoStepByName( "orderStatusRequest")
+else
+testRunner.gotoStepByName("PaReqScript");
+// do something else
+
+
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="PaReqScript"><con:settings/><con:config><script>import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.hamcrest.CoreMatchers.*;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.util.*;
+import java.text.*;
+import org.codehaus.groovy.runtime.TimeCategory;
+import org.apache.commons.lang.RandomStringUtils;
+import groovy.json.JsonBuilder;
+import groovy.json.JsonSlurper;
+import groovy.json.JsonOutput;
+import java.security.MessageDigest;
+
+//--------------------------------------------------
+def Properties = testRunner.testCase.getTestStepByName( "Properties");
+def paReq			= Properties.getPropertyValue( "PaReq" );
+def termUrl			= Properties.getPropertyValue( "redirect" );
+def acsUrlText			= Properties.getPropertyValue( "acsUrl" );
+def mdOrder			= Properties.getPropertyValue( "MD" );
+
+
+ WebDriver driver = new FirefoxDriver();
+ driver.get("https://test.paymentgate.ru/testpayment/merchants/test/test_3dsec.html");
+
+driver.findElement(By.id("acsUrlText")).clear();
+driver.findElement(By.id("acsUrlText")).sendKeys(acsUrlText);
+driver.findElement(By.id("termUrlText")).clear();
+driver.findElement(By.id("termUrlText")).sendKeys(termUrl);
+driver.findElement(By.id("mdText")).clear();
+driver.findElement(By.id("mdText")).sendKeys(mdOrder);
+driver.findElement(By.id("paReqText")).clear();
+driver.findElement(By.id("paReqText")).sendKeys(paReq);
+
+driver.findElement(By.id("redirectToAcs")).click();
+
+Thread.sleep(1000);
+
+WebElement pass = driver.findElement(By.id("password"));
+pass.sendKeys("12345678");
+driver.findElement(By.id("submit_id")).click();
+ Properties.setPropertyValue( "PaReq",null );
+driver.quit();
+
+</script></con:config></con:testStep><con:testStep type="request" name="orderStatusRequest"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MerchantServiceImplServiceSoapBinding</con:interface><con:operation>getOrderStatus</con:operation><con:request name="orderStatusRequest" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:getOrderStatus>
+         <order orderId="d41e799d-e637-48bf-8402-55cf35ba0775" language="ru"/>
+      </mer:getOrderStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:credentials><con:username>test</con:username><con:password>testPwd</con:password><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="completeTransfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>acd</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>orderStatusRequest</con:sourceStep><con:sourcePath>//@actionCodeDescription</con:sourcePath><con:targetType>description</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferChildNodes="false" useXQuery="false" ignoreEmpty="false" entitize="false"><con:name>actionCode</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>orderStatusRequest</con:sourceStep><con:sourcePath>//@errorCode</con:sourcePath><con:targetType>errorCode</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers></con:config></con:testStep><con:properties><con:property><con:name>orderId</con:name><con:value>d41e799d-e637-48bf-8402-55cf35ba0775</con:value></con:property><con:property><con:name>pan</con:name><con:value>4111111111111111</con:value></con:property><con:property><con:name>cvc</con:name><con:value>123</con:value></con:property><con:property><con:name>cardholderName</con:name><con:value>A Moriarty</con:value></con:property><con:property><con:name>ip</con:name><con:value>192.168.0.1</con:value></con:property><con:property><con:name>email</con:name><con:value>bloyh@mail.ru</con:value></con:property><con:property><con:name>params name</con:name><con:value/></con:property><con:property><con:name>value</con:name><con:value/></con:property><con:property><con:name>user</con:name><con:value>test</con:value></con:property><con:property><con:name>pwd</con:name><con:value>testPwd</con:value></con:property><con:property><con:name>endpiont</con:name><con:value>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:value></con:property><con:property><con:name>month</con:name><con:value>12</con:value></con:property><con:property><con:name>year</con:name><con:value>2015</con:value></con:property><con:property><con:name>errorCode</con:name><con:value>0</con:value></con:property><con:property><con:name>description</con:name><con:value>Запрос успешно обработан</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="registerPreAuth" searchProperties="true"><con:settings/><con:testStep type="groovy" name="createOrderNumberScript"><con:settings/><con:config><script>import java.util.*;
+import java.text.*;
+import java.lang.String;
+import org.codehaus.groovy.runtime.TimeCategory;
+import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang.RandomStringUtils;
+import groovy.json.JsonBuilder;
+import groovy.json.JsonSlurper;
+import groovy.json.JsonOutput;
+import java.security.MessageDigest;
+
+long curTime = System.currentTimeMillis();
+
+String curStringDate = new SimpleDateFormat("yyyyMMddhhmmss").format(curTime);
+
+curTime2 = curTime.toString();
+
+def s4 =  curTime2.substring(curTime2.length() -3,curTime2.length());
+
+curStringDate= curStringDate+s4;
+def propertiesRegister = testRunner.testCase.getTestStepByName( "Properties");
+propertiesRegister.setPropertyValue( "OrderNumber", curStringDate);</script></con:config></con:testStep><con:testStep type="properties" name="Properties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>OrderNumber</con:name><con:value>20131127121411226</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>username</con:name><con:sourceType>username</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Username</con:targetType><con:targetStep>registerOrder</con:targetStep><con:targetPath/></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" entitize="false"><con:name>pwd</con:name><con:sourceType>pwd</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Password</con:targetType><con:targetStep>registerOrder</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>endPoint</con:name><con:sourceType>endPoint</con:sourceType><con:sourceStep>#TestCase#</con:sourceStep><con:targetType>Endpoint</con:targetType><con:targetStep>registerOrder</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>orderNumber</con:name><con:sourceType>OrderNumber</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>registerOrder</con:targetStep><con:targetPath>//@ merchantOrderNumber</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="registerOrder"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>MerchantServiceImplServiceSoapBinding</con:interface><con:operation>registerOrder</con:operation><con:request name="registerOrder" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mer="http://engine.paymentgate.ru/webservices/merchant">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mer:registerOrderPreAuth>
+         <order merchantOrderNumber="20131127121411226" description="fgfb" amount="1000" currency="810" language="ru" pageView="?">
+            <!--Optional:-->
+            <returnUrl>""</returnUrl>
+            <!--Zero or more repetitions:-->
+            <params name="?" value="?"/>
+            <!--Optional:-->
+
+         </order>
+      </mer:registerOrderPreAuth>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:username>test</con:username><con:password>testPwd</con:password><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="mdTransfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>orderId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>registerOrder</con:sourceStep><con:sourcePath>//@orderId</con:sourcePath><con:targetType>orderId</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>orderNumber</con:name><con:sourceType>OrderNumber</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:sourcePath/><con:targetType>orderNumber</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers></con:config></con:testStep><con:properties><con:property><con:name>username</con:name><con:value>test</con:value></con:property><con:property><con:name>pwd</con:name><con:value>testPwd</con:value></con:property><con:property><con:name>amount</con:name><con:value>1000</con:value></con:property><con:property><con:name>currency</con:name><con:value>810</con:value></con:property><con:property><con:name>orderId</con:name><con:value>d41e799d-e637-48bf-8402-55cf35ba0775</con:value></con:property><con:property><con:name>orderNumber</con:name><con:value>20131127121411226</con:value></con:property><con:property><con:name>endPoint</con:name><con:value>https://3dsec.sberbank.ru/payment/webservices/merchant-ws</con:value></con:property></con:properties><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>

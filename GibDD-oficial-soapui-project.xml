@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="GibDD_oficial" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="wsGIBDDRUBinding" type="wsdl" bindingName="{http://www.gibdd.ru/}wsGIBDDRUBinding" soapVersion="1_1" anonymous="optional" definition="http://www.gibdd.ru/soap/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.gibdd.ru/soap/?wsdl"><con:part><con:url>http://www.gibdd.ru/soap/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="webservice.gibdd.ru" targetNamespace="http://www.gibdd.ru/" xmlns:tns="http://www.gibdd.ru/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.gibdd.ru/">
+      <xsd:complexType name="CRegion">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ID" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="UPDATE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="REGKOD" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="REGID" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="NAME" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CRegions">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="regions" type="tns:ArrayOfCRegion"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCRegion">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfCRegionEl" type="tns:CRegion"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="СOrgan">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="CODE" type="xsd:integer"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="СOrganList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="organ" type="tns:ArrayOfCOrgan"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCOrgan">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfCOrganEl" type="tns:СOrgan"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="СGarant">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="CODE" type="xsd:integer"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="СGarantList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="garant" type="tns:ArrayOfCGarant"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCGarant">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfCGarantEl" type="tns:СGarant"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CLaw">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ID" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="UPDATE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="FROMDATE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="SORT" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="CODE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="NAME" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ARTTEXT" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="PENALTYTEXT" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="FINEANDTERM" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="WARNING" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MINFINE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAXFINE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MINLEGALFINE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAXLEGALFINE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MINDOLJFINE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAXDOLJFINE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MINTERM" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAXTERM" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MINWORK" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="MAXWORK" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="garant" type="tns:СGarant"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="organ" type="tns:СOrgan"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="garant">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:complexType name="organ">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:complexType name="CLawList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="lawArts" type="tns:ArrayOfCLaw"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCLaw">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfCLawEl" type="tns:CLaw"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CKBK">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ID" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="UPDATE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="VALUE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="USE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="DESC" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CKBKList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="kbk" type="tns:ArrayOfCKBK"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCKBK">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfCKBKEl" type="tns:CKBK"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CSvc">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ID" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="UPDATE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="TYPE" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ADDR" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="DESC" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="BANK" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="RS" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="BIK" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="POLUCH" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="INN" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="KPP" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="OKATO" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CSvcList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="services" type="tns:ArrayOfCSvc"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCSvc">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfCSvcEl" type="tns:CSvc"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CDiv">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ID" type="xsd:integer"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="UPDATE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="REGKOD" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="CODE" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="NAME" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ADDR" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="PINDEX" type="xsd:string"/>
+          <xsd:element minOccurs="0" maxOccurs="1" name="services" type="tns:CSvc"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="services">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:complexType name="CDivList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="divisions" type="tns:ArrayOfCDiv"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCDiv">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfCDivEl" type="tns:CDiv"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetDivAndSvc">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="code" type="xsd:integer"/>
+            <xsd:element minOccurs="0" maxOccurs="1" name="updated" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetDivAndSvcResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="divisions" type="tns:CDivList"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetKBK">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetKBKResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="kbk" type="tns:CKBKList"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetLawArticles">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetLawArticlesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="lawArts" type="tns:CLawList"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRegions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="code" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRegionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="regions" type="tns:CRegions"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDivAndSvcSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDivAndSvc"/>
+  </wsdl:message>
+  <wsdl:message name="GetDivAndSvcSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDivAndSvcResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetKBKSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKBK"/>
+  </wsdl:message>
+  <wsdl:message name="GetKBKSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKBKResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetLawArticlesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLawArticles"/>
+  </wsdl:message>
+  <wsdl:message name="GetLawArticlesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLawArticlesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetRegionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegions"/>
+  </wsdl:message>
+  <wsdl:message name="GetRegionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="wsGIBDDRUInterface">
+    <wsdl:operation name="GetDivAndSvc">
+      <wsdl:input message="tns:GetDivAndSvcSoapIn"/>
+      <wsdl:output message="tns:GetDivAndSvcSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBK">
+      <wsdl:input message="tns:GetKBKSoapIn"/>
+      <wsdl:output message="tns:GetKBKSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetLawArticles">
+      <wsdl:input message="tns:GetLawArticlesSoapIn"/>
+      <wsdl:output message="tns:GetLawArticlesSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <wsdl:input message="tns:GetRegionsSoapIn"/>
+      <wsdl:output message="tns:GetRegionsSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsGIBDDRUBinding" type="tns:wsGIBDDRUInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetDivAndSvc">
+      <soap:operation soapAction="http://www.gibdd.ru/GetDivAndSvc" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKBK">
+      <soap:operation soapAction="http://www.gibdd.ru/GetKBK" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLawArticles">
+      <soap:operation soapAction="http://www.gibdd.ru/GetLawArticles" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <soap:operation soapAction="http://www.gibdd.ru/GetRegions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="webservice.gibdd.ru">
+    <wsdl:port name="wsGIBDDRUSoap" binding="tns:wsGIBDDRUBinding">
+      <soap:address location="http://www.gibdd.ru/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.gibdd.ru/soap/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.gibdd.ru/GetDivAndSvc" name="GetDivAndSvc" bindingOperationName="GetDivAndSvc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.gibdd.ru/ws/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gib="http://www.gibdd.ru/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gib:GetDivAndSvc>
+         <!--Optional:-->
+         <gib:code>?</gib:code>
+         <!--Optional:-->
+         <gib:updated>?</gib:updated>
+      </gib:GetDivAndSvc>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.gibdd.ru/GetDivAndSvc"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.gibdd.ru/GetKBK" name="GetKBK" bindingOperationName="GetKBK" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.gibdd.ru/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gib="http://www.gibdd.ru/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gib:GetKBK/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.gibdd.ru/GetKBK"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.gibdd.ru/GetLawArticles" name="GetLawArticles" bindingOperationName="GetLawArticles" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.gibdd.ru/ws/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gib="http://www.gibdd.ru/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gib:GetLawArticles/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.gibdd.ru/GetLawArticles"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://www.gibdd.ru/GetRegions" name="GetRegions" bindingOperationName="GetRegions" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.gibdd.ru/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gib="http://www.gibdd.ru/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gib:GetRegions>
+         <!--Optional:-->
+         <gib:code>?</gib:code>
+      </gib:GetRegions>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.gibdd.ru/GetRegions"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>
